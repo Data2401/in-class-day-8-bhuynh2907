@@ -1,7 +1,7 @@
 ---
 title: "Lists - In Class Exercises"
-author: "Dr. Shoemaker"
-date: "DATA 2401"
+author: "Billy Huynh"
+date: "DATA2401 InClass Day 8"
 output:nhtml_document
 
 ---
@@ -11,7 +11,11 @@ output:nhtml_document
 Make a list that contains the information on a single playing card. Suit, face, and value. 
 
 ```{r}
-
+card <- list(
+  suit = "Heart",
+  face = "Ace",
+  value = "11"
+)
 
 ```
 
@@ -19,8 +23,12 @@ Make a list that contains the information on a single playing card. Suit, face, 
 Make a second list where each element contains all the options for suit, face, and value, respectively. 
 
 ```{r}
-
-
+all_options <- list(
+  suits = c("Clover", "Heart", "Diamond", "Spade"),
+  faces = c("Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"),
+  values = c(1:11)
+)
+typeof(all_options[[1]])
 ```
 
 
@@ -28,7 +36,7 @@ If `Newlist <- list(a=1:10, b="Good morning", c="Hi")`, write an R statement tha
 
 ```{r}
 Newlist <- list(a=1:10, b="Good morning", c="Hi")
-
+Newlist[[1]] + 1
 
 ```
 
@@ -36,14 +44,17 @@ If `b <- list(a=1:10, c="Hello", d="AA")`, write an R expression that will give 
 
 ```{r}
 b <- list(a=1:10, c="Hello", d="AA")
+a_without_2nd <- b[[1]][-2]
+a_without_2nd
 
-
+a_greater_than_seven <- b[[1]][b[[1]] > 7]
+a_greater_than_seven
 ```
 
 Let `x <- list(a=5:10, c="Hello", d="AA")`, write an R statement to add a new item z = "NewItem" to the list x.
 
 ```{r}
 x <- list(a=5:10, c="Hello", d="AA")
-
-
+x$z <- "NewItem"
+x
 ```
